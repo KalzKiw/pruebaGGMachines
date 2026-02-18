@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animation for glowing button */
+@layer utilities {
+  .animate-glow {
+    box-shadow: 0 0 16px 2px #22ff88, 0 0 32px 4px #22ff88;
+    animation: glow 1.5s infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 8px 1px #22ff88, 0 0 16px 2px #22ff88;
+    }
+    to {
+      box-shadow: 0 0 24px 4px #22ff88, 0 0 48px 8px #22ff88;
+    }
+  }
+}

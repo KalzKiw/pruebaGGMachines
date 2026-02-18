@@ -1,27 +1,28 @@
-# Mini PC Store - React Frontend + Wix Backend
+# Mini PC Store - React Frontend + Velo by Wix Backend
 
-A premium dark mode landing page for Mini PC sales with Wix headless integration.
+A premium dark mode landing page for Mini PC sales with Velo by Wix integration.
 
 ## 🚀 Features
 
 - **Premium Dark Mode Design** - High-end, industrial aesthetic
 - **React + Tailwind CSS** - Modern, responsive frontend
-- **Wix Headless Integration** - Backend for products, payments, inventory
+- **Velo by Wix Integration** - Custom backend endpoints and data collections
 - **Production Ready** - Optimized build for deployment
 
 ## 🛠️ Tech Stack
 
 - **Frontend:** React 18, Tailwind CSS
-- **Backend:** Wix Headless (products, cart, checkout)
+- **Backend:** Velo by Wix (custom endpoints, data collections)
+- **Database:** Wix Data Collections
 - **Build Tool:** Create React App
-- **Deployment:** Ready for Netlify/Vercel
+- **Deployment:** Wix Platform (recommended) or Netlify/Vercel
 
 ## 📦 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mini-pc-store.git
-cd mini-pc-store
+git clone https://github.com/KalzKiw/pruebaGGMachines.git
+cd Pagina
 
 # Install dependencies
 npm install
@@ -38,17 +39,15 @@ npm run build
 1. Create a `.env` file in the root directory:
 
 ```env
-REACT_APP_WIX_API_KEY=your_wix_api_key_here
-REACT_APP_WIX_SITE_ID=your_wix_site_id_here
-REACT_APP_WIX_CLIENT_ID=your_wix_client_id_here
+REACT_APP_VELO_SITE_URL=https://yourusername.wixsite.com/yoursite
+REACT_APP_ENVIRONMENT=development
 ```
 
-2. Set up your Wix store:
-   - Create a Wix Business account
-   - Enable Wix Stores
-   - Configure payment methods
-   - Add your products
-
+2. Set up your Wix site with Velo:
+   - Create a Wix account and new site
+   - Enable Velo Developer Mode
+   - Create data collections (Products, Orders, Contacts)
+   - Deploy HTTP functions for API endpoints
 ## 🏗️ Project Structure
 
 ```
@@ -56,7 +55,7 @@ src/
 ├── components/
 │   └── LandingPage.jsx     # Main landing page component
 ├── services/
-│   └── wixService.js       # Wix API integration
+│   └── veloService.js      # Velo by Wix API integration
 ├── styles/
 │   ├── global.css          # Global styles
 │   └── tailwind.css        # Tailwind directives
@@ -72,19 +71,21 @@ src/
 
 ## 🚀 Deployment
 
-### Netlify (Recommended)
+### Wix Platform (Recommended)
+
+1. Follow the complete guide in `VELO_SETUP_GUIDE.md`
+2. Upload your React build to Wix
+3. Configure domain and payments
+
+### Netlify/Vercel (Alternative)
 
 1. Build the project:
 ```bash
 npm run build
 ```
 
-2. Drag the `build/` folder to [netlify.com](https://netlify.com)
-
-### Vercel
-
-1. Connect your GitHub repository to [vercel.com](https://vercel.com)
-2. Deploy automatically on push
+2. Deploy to your preferred platform
+3. Configure environment variables
 
 ## 🛍️ Products Featured
 
@@ -93,12 +94,19 @@ npm run build
 - MinisForum UM870 Plus - Ryzen 7, 4K displays ($1,299)
 - GMKtec K6 - Ryzen 7 7840HS, office-ready ($999)
 
-## 🔄 Wix Integration Flow
+## 🔄 Velo Integration Flow
 
-1. Customer views React frontend (fast & beautiful)
-2. Adds products to cart via Wix API
-3. Clicks checkout → redirects to Wix secure payment
-4. Order management handled by Wix dashboard
+1. Customer views React frontend 
+2. Frontend calls Velo HTTP Functions
+3. Velo manages products, cart, and orders
+4. Wix Payments handles secure transactions
+5. All data stored in Wix Data Collections
+
+## 📚 Setup Guides
+
+- **Complete Setup:** See `VELO_SETUP_GUIDE.md` for step-by-step instructions
+- **API Reference:** Check Velo by Wix documentation
+- **Data Collections:** Configure Products, Orders, and Contacts collections
 
 ## 📄 License
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { wixServices } from '../services/wixService';
+import { wixServices } from '../services/veloService';
 
 export default function LandingPage() {
   const [products, setProducts] = useState([]);

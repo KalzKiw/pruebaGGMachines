@@ -114,7 +114,7 @@ const techProducts = [
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-20">
+      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-8">
         {/* Background with subtle gradient overlays */}
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-gradient-to-br from-black via-gray-950 to-black flex items-center justify-center relative">
@@ -169,7 +169,7 @@ const techProducts = [
               {/* Image container */}
               <div className="relative w-full h-96 bg-gray-900 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
                 <img 
-                  src="/GMKTEC EVO-T1.avif" 
+                  src={products[0]?.image && products[0]?.image.trim() !== '' ? products[0].image : 'https://via.placeholder.com/320x320?text=Mini+PC'} 
                   alt="GMKtec EVO-T1 Mini PC"
                   className="w-full h-full object-cover"
                 />

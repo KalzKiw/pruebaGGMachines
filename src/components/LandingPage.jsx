@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { wixServices } from '../services/veloService';
 import AOS from 'aos';
@@ -102,11 +100,11 @@ export default function LandingPage() {
   };
 
 const techProducts = [
-  { name: "New Arrival", image: "" },
-  { name: "Pro Model", image: "" },
-  { name: "New AI Unit", image: "" },
-  { name: "New AI Unit", image: "" },
-  { name: "New Arrival", image: "" }
+  { name: "New Arrival", image: 'https://via.placeholder.com/320x320?text=Mini+PC' },
+  { name: "Pro Model", image: 'https://via.placeholder.com/320x320?text=Mini+PC' },
+  { name: "New AI Unit", image: 'https://via.placeholder.com/320x320?text=Mini+PC' },
+  { name: "New AI Unit", image: 'https://via.placeholder.com/320x320?text=Mini+PC' },
+  { name: "New Arrival", image: 'https://via.placeholder.com/320x320?text=Mini+PC' }
 ];
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-950 min-h-screen font-sans text-white">
@@ -114,7 +112,7 @@ const techProducts = [
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-8">
+      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-4">
         {/* Background with subtle gradient overlays */}
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-gradient-to-br from-black via-gray-950 to-black flex items-center justify-center relative">
@@ -169,15 +167,10 @@ const techProducts = [
               {/* Image container */}
               <div className="relative w-full h-96 bg-gray-900 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
                 <img 
-                  src={(() => {
-                    try {
-                      return require('../assets/GMKTEC-EVO-T1.avif');
-                    } catch {
-                      return require('../assets/GMKTEC-EVO-T1.png');
-                    }
-                  })()}
+                  src={require('../assets/GMKTEC EVO-T1.avif')}
                   alt="GMKtec EVO-T1 Mini PC"
                   className="w-full h-full object-cover"
+                  style={{background:'transparent'}}
                 />
               </div>
             </div>
@@ -285,7 +278,7 @@ const techProducts = [
           <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
             <div className="order-2 md:order-1" data-aos="fade-right">
               <div className="w-80 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700">
-                <div className="w-32 h-24 bg-gray-600 rounded-lg"></div>
+                <img src="https://via.placeholder.com/320x320?text=Mini+PC" alt="Placeholder" className="w-32 h-24 object-contain" />
               </div>
             </div>
             <div className="order-1 md:order-2" data-aos="fade-left">
@@ -305,12 +298,16 @@ const techProducts = [
                 Forget the myth that “bigger is better.” Get workstation power with energy consumption optimized for businesses and creators seeking profitability.
               </p>
             </div>
-            <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl" data-aos="fade-left"></div>
+            <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl flex items-center justify-center" data-aos="fade-left">
+              <img src="https://via.placeholder.com/320x320?text=Mini+PC" alt="Placeholder" className="w-32 h-24 object-contain" />
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1" data-aos="fade-right">
-              <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl"></div>
+              <div className="w-80 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700">
+                <img src="https://via.placeholder.com/320x320?text=Mini+PC" alt="Placeholder" className="w-32 h-24 object-contain" />
+              </div>
             </div>
             <div className="order-1 md:order-2" data-aos="fade-left">
               <div className="text-gray-400 text-sm mb-2 tracking-wider">03</div>
@@ -347,7 +344,7 @@ const techProducts = [
                     {product.image ? (
                       <img src={product.image} alt={product.model} className="w-full h-full object-cover" />
                     ) : (
-                      <div className="w-24 h-16 bg-gray-600 rounded"></div>
+                      <img src="https://via.placeholder.com/320x320?text=Mini+PC" alt="Placeholder" className="w-full h-full object-cover" />
                     )}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{product.model}</h3>
@@ -387,7 +384,7 @@ const techProducts = [
             {techProducts.map((product, index) => (
               <div key={index} className="flex-shrink-0 hover:scale-105 transition-transform duration-500" data-aos="zoom-in">
                 <div className="w-48 h-36 bg-gray-800 rounded-xl flex items-center justify-center mb-4">
-                  <div className="w-20 h-12 bg-gray-600 rounded"></div>
+                  <img src={product.image} alt={product.name} className="w-20 h-12 object-contain" />
                 </div>
                 <div className="text-center">
                   <span className="inline-block bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">

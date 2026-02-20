@@ -12,7 +12,7 @@ export default function Logo({ size = "md", showText = false }) {
     <div className="flex items-center gap-2">
       {/* Logo Image */}
       <img
-        src="/minpcwhite_RGB.png"
+        src={require('../assets/minpcwhite_RGB.png')}
         alt="GG Machines Logo"
         style={{ height: `${s.image}px`, width: 'auto' }}
         className="object-contain"

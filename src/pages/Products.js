@@ -9,10 +9,10 @@ const Products = () => {
 
   // Map products to their images (served from public/)
   const productImages = {
-    'GMKtec EVO-T1': '/GMKTEC-EVO-T1.avif',
-    'GMKtec EVO-X1': '/GMKtec-EVO-X1.avif',
-    'MinisForum UM870 Plus': '/MinisForum-UM870-Plus.avif',
-    'GMKtec K6': '/GMKtec-K6.avif'
+    'GMKtec EVO-T1': require('../assets/GMKTEC-EVO-T1.avif'),
+    'GMKtec EVO-X1': require('../assets/GMKtec-EVO-X1.avif'),
+    'MinisForum UM870 Plus': require('../assets/MinisForum-UM870-Plus.avif'),
+    'GMKtec K6': require('../assets/GMKtec-K6.avif')
   };
 
   useEffect(() => {

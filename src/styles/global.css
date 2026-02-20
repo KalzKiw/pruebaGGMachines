@@ -1,3 +1,18 @@
+/* Oculta el footer de Wix si está presente */
+#SITE_FOOTER, #footer1, [data-testid="footer-container"] {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  visibility: hidden !important;
+}
+/* Oculta la barra de scroll en todos los navegadores modernos */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
 
 body {
   margin: 0;

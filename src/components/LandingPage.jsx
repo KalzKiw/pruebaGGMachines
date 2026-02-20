@@ -1,8 +1,11 @@
 
+
 import React, { useState, useEffect } from "react";
 import { wixServices } from '../services/veloService';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default function LandingPage() {
   const [products, setProducts] = useState([]);
@@ -108,27 +111,7 @@ const techProducts = [
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-950 min-h-screen font-sans text-white">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 p-6" data-aos="fade-down">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-sm"></div>
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-sm -ml-2"></div>
-            <span className="ml-3 text-white font-bold text-sm tracking-wider">MINI PC'S IRELAND<br/>POWERED BY GG MACHINES</span>
-          </div>
-          <div className="flex items-center space-x-8">
-            <a href="#" className="text-yellow-400 font-medium hover:text-yellow-300 transition-colors">SHOP</a>
-            <a href="#" className="text-white hover:text-gray-300 transition-colors">HOME</a>
-            <div className="w-6 h-6 border border-white rounded-sm flex items-center justify-center relative cursor-pointer" onClick={handleCheckout}>
-              <span className="text-xs">🛒</span>
-              {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-500 text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                  {cartCount}
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden" data-aos="fade-up">
@@ -395,35 +378,7 @@ const techProducts = [
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-12 px-6" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-sm"></div>
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-sm -ml-2"></div>
-              <span className="ml-3 text-white font-bold text-sm">GG MACHINES</span>
-            </div>
-            
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">EUROPE</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">USA</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">CONTACT</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">ORDERS</a>
-            </div>
-            
-            <div className="flex space-x-4">
-              <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            </div>
-          </div>
-          
-          <div className="text-center text-gray-500 text-sm">
-            © 2024 GG MACHINES PRECISION INFRASTRUCTURE AND COOLING.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

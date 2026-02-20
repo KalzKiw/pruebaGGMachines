@@ -23,6 +23,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.reduced-space {
+  margin-top: 24px !important;
+}
+
 
 .App {
   min-height: 100vh;

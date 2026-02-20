@@ -1,13 +1,14 @@
 import React from 'react';
 import './Navbar.css';
 import Logo from './Logo';
+import logo from '../assets/minpcwhite_RGB.png';
 
 const Navbar = () => (
   <nav className="navbar sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
     <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       {/* Logo */}
       <div className="navbar-logo flex items-center gap-2">
-        <Logo size="lg" />
+        <img src={logo} alt="Logo" className="navbar-logo" />
       </div>
 
       {/* Nav Links */}

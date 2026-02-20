@@ -1,5 +1,6 @@
 import React from 'react';
 import 'animate-ui/dist/animate.min.css';
+import placeholderImage from '../assets/GMKTEC EVO-T1.avif';
 
 const Home = () => (
   <section id="home" className="section animate__animated animate__fadeIn">
@@ -13,7 +14,7 @@ const Home = () => (
       </p>
       <a href="#products" style={{background: '#ff4ecd', color: '#111', padding: '12px 32px', borderRadius: '30px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-block', boxShadow: '0 2px 8px #0003'}}>EXPLORE MINI PCS</a>
       <div style={{marginTop: '40px'}}>
-        <img src="/assets/mini-pc-main.png" alt="Mini PC" style={{maxWidth: '400px', width: '100%', borderRadius: '20px', boxShadow: '0 4px 32px #0008'}} />
+        <img src={placeholderImage} alt="Placeholder" className="home-image" />
       </div>
     </div>
   </section>

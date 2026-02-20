@@ -1,6 +1,8 @@
 import React from 'react';
 import 'animate-ui/dist/animate.min.css';
 
+const placeholderImage = require('../assets/GMKTEC EVO-T1.avif');
+
 const services = [
   {
     title: 'VAPOR CHAMBER COOLING TECH',
@@ -30,7 +32,7 @@ const Services = () => (
     <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px'}}>
       {services.map((srv, idx) => (
         <div key={idx} style={{background: '#181818', borderRadius: '16px', padding: '24px', minWidth: '260px', maxWidth: '320px', flex: '1 1 260px', textAlign: 'left', boxShadow: '0 2px 16px #0006'}}>
-          <img src={srv.img} alt={srv.title} style={{width: '100%', borderRadius: '12px', marginBottom: '18px'}} />
+          <img src={placeholderImage} alt="Placeholder" className="services-image" />
           <h3 style={{color: '#fff'}}>{srv.title}</h3>
           <p style={{color: '#ccc'}}>{srv.desc}</p>
         </div>

@@ -128,55 +128,31 @@ const techProducts = [
               <span className="text-white text-sm font-semibold tracking-widest">NEXT-GENERATION COMPUTING</span>
             </div>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 text-white">
-              DESKTOP<br/>
-              POWER.<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-blue-500">POCKET SIZE.</span>
+              DESKTOP POWER.<br />
+              <span className="gradient-text">POCKET SIZE.</span>
             </h1>
-            <p className="text-gray-400 mb-8 text-lg max-w-lg leading-relaxed">
-              Enterprise-grade performance in a form factor designed for modern professionals. AI acceleration, premium cooling, and uncompromising engineering.
-            </p>
-            <div className="flex gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="100">
-              <button className="bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center space-x-2">
-                <span>EXPLORE</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-              </button>
-              <button className="border border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300">
-                LEARN MORE
-              </button>
+            <p>Enterprise-grade performance in a form factor designed for modern professionals. AI acceleration, premium cooling, and uncompromising engineering.</p>
+            <div className="hero-buttons">
+              <button className="explore-btn">EXPLORE</button>
+              <button className="learn-btn">LEARN MORE</button>
             </div>
-            <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+            <div className="hero-specs">
               <div>
-                <div className="text-3xl font-black text-white">2.5L</div>
-                <p className="text-gray-500 text-sm mt-1">Compact Form</p>
+                <span>2.5L</span>
+                <small>Compact Form</small>
               </div>
               <div>
-                <div className="text-3xl font-black text-white">64GB</div>
-                <p className="text-gray-500 text-sm mt-1">DDR5 RAM</p>
+                <span>64GB</span>
+                <small>DDR5 RAM</small>
               </div>
               <div>
-                <div className="text-3xl font-black text-white">50 TOPS</div>
-                <p className="text-gray-500 text-sm mt-1">AI Acceleration</p>
+                <span>50 TOPS</span>
+                <small>AI Acceleration</small>
               </div>
             </div>
-          </div>
-          
-          <div className="flex-1 flex justify-center items-center" data-aos="fade-left" data-aos-delay="300">
-            <div className="relative w-full max-w-sm">
-              {/* Image container */}
-              <div className="relative w-full h-96 bg-gray-900 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
-                <img 
-                  src={require('../assets/GMKTEC EVO-T1.avif')}
-                  alt="GMKtec EVO-T1 Mini PC"
-                  className="w-full h-full object-cover"
-                  style={{background:'transparent'}}
-                />
-              </div>
+            <div className="hero-image">
+              <img src={require('../assets/GMKTEC EVO-T1.avif')} alt="GMKTEC EVO-T1" />
             </div>
-          </div>
-        </div>
-      </section>
 
       {/* Specs Section */}
       <section className="py-32 px-6 relative overflow-hidden" data-aos="fade-up">

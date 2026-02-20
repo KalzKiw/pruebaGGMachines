@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { wixServices } from '../services/veloService';
@@ -14,6 +13,8 @@ const Products = () => {
     'MinisForum UM870 Plus': require('../assets/MinisForum UM870 Plus.avif'),
     'GMKtec K6': require('../assets/GMKtec K6.avif')
   };
+
+  const placeholderImage = require('../assets/GMKTEC EVO-T1.avif');
 
   useEffect(() => {
     wixServices.getProducts().then(data => {
@@ -55,7 +56,11 @@ const Products = () => {
                       className="w-full h-48 object-cover rounded-lg mb-6"
                     />
                   ) : (
-                    <div className="h-48 rounded-lg mb-6 bg-gray-800 flex items-center justify-center text-gray-500 font-semibold">PC IMAGE</div>
+                    <img
+                      src={productImages[prod.name] || placeholderImage}
+                      alt={prod.name}
+                      className="product-image"
+                    />
                   )}
                   <h3 className="text-white font-bold mb-2 text-lg">{prod.model || prod.name}</h3>
                   {prod.price && <p className="text-white font-semibold mb-4">{prod.price}</p>}

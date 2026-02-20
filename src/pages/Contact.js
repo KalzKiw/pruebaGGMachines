@@ -1,5 +1,6 @@
 import React from 'react';
 import 'animate-ui/dist/animate.min.css';
+import placeholderImage from '../assets/GMKTEC EVO-T1.avif';
 
 const Contact = () => (
   <section id="contact" className="section animate__animated animate__fadeInUp" style={{background: '#0a0a0a'}}>
@@ -9,6 +10,7 @@ const Contact = () => (
       <input type="email" placeholder="Email" style={{width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: 'none', background: '#222', color: '#fff'}} />
       <textarea placeholder="Message" rows="4" style={{width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: 'none', background: '#222', color: '#fff'}} />
       <button type="submit" style={{width: '100%', padding: '12px', borderRadius: '8px', border: 'none', background: '#ff4ecd', color: '#111', fontWeight: 700, fontSize: '1.1rem'}}>Send</button>
+      <img src={placeholderImage} alt="Placeholder" className="contact-image" />
     </form>
   </section>
 );

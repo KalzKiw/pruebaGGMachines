@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animation for glowing button */
 @layer utilities {
   .animate-glow {
     box-shadow: 0 0 16px 2px #22ff88, 0 0 32px 4px #22ff88;
@@ -15,5 +14,12 @@
     to {
       box-shadow: 0 0 24px 4px #22ff88, 0 0 48px 8px #22ff88;
     }
+  }
+  .text-shadow {
+    text-shadow: 0 2px 8px #000a, 0 1px 2px #22ff88;
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }

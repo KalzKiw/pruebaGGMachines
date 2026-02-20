@@ -1,14 +1,23 @@
+
 import React, { useState, useEffect } from "react";
 import { wixServices } from '../services/veloService';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function LandingPage() {
   const [products, setProducts] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     loadProducts();
     loadCartCount();
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out',
+    });
   }, []);
 
   const loadProducts = async () => {
@@ -97,9 +106,9 @@ const techProducts = [
   { name: "New Arrival", image: "" }
 ];
   return (
-    <div className="bg-black min-h-screen font-sans text-white">
+    <div className="bg-gradient-to-br from-black via-gray-900 to-gray-950 min-h-screen font-sans text-white">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 p-6">
+      <nav className="absolute top-0 left-0 right-0 z-50 p-6" data-aos="fade-down">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-sm"></div>
@@ -122,7 +131,7 @@ const techProducts = [
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden" data-aos="fade-up">
         {/* Topographic background */}
         <div className="absolute inset-0 opacity-20">
           <svg viewBox="0 0 800 600" className="w-full h-full">
@@ -134,7 +143,7 @@ const techProducts = [
         </div>
         
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
-          <div className="flex-1 max-w-2xl">
+          <div className="flex-1 max-w-2xl" data-aos="fade-right">
             <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6">
               <span className="text-green-400">TITANIC</span><br/>
               <span className="text-white">PERFORMANCE</span><br/>
@@ -151,7 +160,7 @@ const techProducts = [
             </button>
           </div>
           
-          <div className="flex-1 flex justify-center items-center">
+          <div className="flex-1 flex justify-center items-center" data-aos="fade-left">
             <div className="relative">
               <img src="" alt="Mini PC Setup" className="w-96 h-96 object-contain" />
               {/* Placeholder for mini PC images */}
@@ -168,23 +177,23 @@ const techProducts = [
       </section>
 
       {/* Specs Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           {/* AI Ready */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in">
             <div className="text-gray-400 text-sm mb-2 tracking-wider">AI<br/>READY</div>
             <h3 className="text-5xl font-black mb-4">NPU 50<br/>TOPS</h3>
             <p className="text-gray-400">(Ryzen AI 9 HX<br/>370)</p>
           </div>
           
           {/* Core Performance */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in" data-aos-delay="100">
             <div className="text-gray-400 text-sm mb-2 tracking-wider">CORE<br/>PERFORMANCE</div>
             <h3 className="text-4xl font-bold mb-4">64GB DDR5 RAM & 1TB<br/>SSD GEN4</h3>
           </div>
           
           {/* Output Interface */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in" data-aos-delay="200">
             <div className="text-gray-400 text-sm mb-2 tracking-wider">OUTPUT INTERFACE</div>
             <div className="space-y-2">
               <p className="font-semibold">Quad-Display<br/>Support</p>
@@ -201,23 +210,23 @@ const techProducts = [
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8">
+          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up">
             <h3 className="text-2xl font-bold mb-4">Engineering<br/>Expertise</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Specialized in Custom Loops and AI Workstations. Our master technicians engineer liquid-cooled auto systems and high-density deep learning infrastructure with surgical precision for peak thermal performance.
             </p>
           </div>
           
-          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8">
+          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="100">
             <h3 className="text-2xl font-bold mb-4">B2B &<br/>Education</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Trusted partners for Schools and Esports Arenas. Large-scale deployment for educational institutions and professional competitive environments, backed by volume logistics and priority SLA.
             </p>
           </div>
           
-          <div className="bg-gray-900/30 border border-gray-600/50 rounded-2xl p-8">
+          <div className="bg-gray-900/30 border border-gray-600/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="200">
             <h3 className="text-2xl font-bold mb-4 text-gray-400">Human<br/>Support</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Honest advice, no upselling, and personalized service. Speak directly to specialists who understand performance metrics. We prioritize your specific workflow over profit margins, every time.
@@ -227,15 +236,15 @@ const techProducts = [
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
-            <div className="order-2 md:order-1">
+            <div className="order-2 md:order-1" data-aos="fade-right">
               <div className="w-80 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700">
                 <div className="w-32 h-24 bg-gray-600 rounded-lg"></div>
               </div>
             </div>
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2" data-aos="fade-left">
               <div className="text-gray-400 text-sm mb-2 tracking-wider">01</div>
               <h3 className="text-4xl font-bold mb-4">MORE PERFORMANCE, LESS<br/>VOLUME</h3>
               <p className="text-gray-300">
@@ -245,21 +254,21 @@ const techProducts = [
           </div>
           
           <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
-            <div>
+            <div data-aos="fade-right">
               <div className="text-gray-400 text-sm mb-2 tracking-wider">02</div>
               <h3 className="text-4xl font-bold mb-4">REAL ENERGY EFFICIENCY</h3>
               <p className="text-gray-300">
                 Forget the myth that 'bigger is better.' Get workstation power with energy consumption optimized for businesses and creators seeking profitability.
               </p>
             </div>
-            <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl"></div>
+            <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl" data-aos="fade-left"></div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="order-2 md:order-1">
+            <div className="order-2 md:order-1" data-aos="fade-right">
               <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl"></div>
             </div>
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-2" data-aos="fade-left">
               <div className="text-gray-400 text-sm mb-2 tracking-wider">03</div>
               <h3 className="text-4xl font-bold mb-4">FRICTIONLESS IT</h3>
               <p className="text-gray-300">
@@ -271,7 +280,7 @@ const techProducts = [
       </section>
 
       {/* Product Lineup */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-black text-center mb-16 tracking-wider">PRODUCT LINEUP</h2>
           
@@ -279,7 +288,7 @@ const techProducts = [
             {loading ? (
               // Skeleton loading
               Array.from({length: 4}).map((_, index) => (
-                <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 animate-pulse">
+                <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 animate-pulse shadow-lg" data-aos="zoom-in">
                   <div className="w-full h-48 bg-gray-700 rounded-xl mb-6"></div>
                   <div className="h-6 bg-gray-700 rounded mb-3"></div>
                   <div className="h-4 bg-gray-700 rounded mb-4"></div>
@@ -289,7 +298,7 @@ const techProducts = [
               ))
             ) : (
               products.map((product, index) => (
-                <div key={product.id || index} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+                <div key={product.id || index} className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in">
                   <div className="w-full h-48 bg-gray-800 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
                     {product.image ? (
                       <img src={product.image} alt={product.model} className="w-full h-full object-cover" />
@@ -325,9 +334,9 @@ const techProducts = [
             <h3 className="text-5xl font-black mb-12">PRECISION ENGINEERED HARDWARE</h3>
           </div>
           
-          <div className="flex justify-center items-center space-x-8 overflow-x-auto pb-4">
+          <div className="flex justify-center items-center space-x-8 overflow-x-auto pb-4" data-aos="fade-up">
             {techProducts.map((product, index) => (
-              <div key={index} className="flex-shrink-0">
+              <div key={index} className="flex-shrink-0 hover:scale-105 transition-transform duration-500" data-aos="zoom-in">
                 <div className="w-48 h-36 bg-gray-800 rounded-xl flex items-center justify-center mb-4">
                   <div className="w-20 h-12 bg-gray-600 rounded"></div>
                 </div>
@@ -343,12 +352,12 @@ const techProducts = [
       </section>
 
       {/* Technology Features */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-black mb-16">HIGH-DENSITY MINI PCS</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-2xl p-8 relative overflow-hidden shadow-lg" data-aos="fade-right">
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold mb-4">VAPOR CHAMBER<br/>COOLING TECH</h3>
                 <p className="text-gray-300 text-sm">
@@ -358,7 +367,7 @@ const techProducts = [
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full"></div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-2xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-2xl p-8 relative overflow-hidden shadow-lg" data-aos="fade-left">
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold mb-4">HIGH-DENSITY<br/>MODULES</h3>
                 <p className="text-gray-300 text-sm">
@@ -368,14 +377,14 @@ const techProducts = [
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-cyan-500/20 to-transparent rounded-full"></div>
             </div>
             
-            <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8 shadow-lg" data-aos="fade-right">
               <h3 className="text-3xl font-bold mb-4">ZERO CLUTTER<br/>DEPLOYMENT</h3>
               <p className="text-gray-300 text-sm">
                 Hyper-compact 5G Oll Connectivity. Flawless container-based deployments for modern enterprise infrastructure and remote workstations.
               </p>
             </div>
             
-            <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8 shadow-lg" data-aos="fade-left">
               <h3 className="text-3xl font-bold mb-4">IRISH EXPERT<br/>ASSISTANCE</h3>
               <p className="text-gray-300 text-sm">
                 Expert local consultation. Our Engineers assess your workflow before installation. Backed by pride in micro hardware engineering.
@@ -386,7 +395,7 @@ const techProducts = [
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-12 px-6">
+      <footer className="bg-black border-t border-gray-800 py-12 px-6" data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-2">

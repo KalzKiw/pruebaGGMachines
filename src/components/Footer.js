@@ -5,25 +5,16 @@ import Logo from './Logo';
 const Footer = () => (
   <footer className="bg-black border-t border-gray-800 py-12 px-6">
     <div className="max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-4 gap-12 mb-12">
-        {/* Brand Column */}
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-4">
-            <Logo size="md" />
-            <div>
-              <h3 className="text-white font-black text-lg">GG MACHINES</h3>
-              <p className="text-gray-400 text-sm">Mini PC Ireland's Finest</p>
-            </div>
-          </div>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Specialist retailers of high-performance mini PCs, AI accelerators, and compact computing solutions since 2024.
-          </p>
+      <div className="grid md:grid-cols-3 gap-12 mb-12 items-center">
+        {/* Logo Left */}
+        <div className="flex flex-col items-start justify-center">
+          <Logo size="xl" />
         </div>
 
-        {/* Quick Links */}
-        <div>
+        {/* Quick Links Center */}
+        <div className="flex flex-col items-center justify-center h-full">
           <h4 className="text-white font-bold mb-4">Quick Links</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-center">
             <li><a href="#home" className="text-gray-400 hover:text-fuchsia-400 transition-colors text-sm">Home</a></li>
             <li><a href="/products" className="text-gray-400 hover:text-fuchsia-400 transition-colors text-sm">Products</a></li>
             <li><a href="#services" className="text-gray-400 hover:text-fuchsia-400 transition-colors text-sm">Services</a></li>
@@ -31,13 +22,13 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Contact Info Right */}
         <div>
           <h4 className="text-white font-bold mb-4">Contact</h4>
           <ul className="space-y-2 text-sm">
-            <li className="text-gray-400">📧 info@ggmachines.ie</li>
-            <li className="text-gray-400">📱 +353 1 XXXX XXXX</li>
-            <li className="text-gray-400">📍 Dublin, Ireland</li>
+            <li className="text-gray-400">info@ggmachines.ie</li>
+            <li className="text-gray-400">+353 1 XXXX XXXX</li>
+            <li className="text-gray-400">Dublin, Ireland</li>
           </ul>
         </div>
       </div>

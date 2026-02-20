@@ -2,7 +2,8 @@ export default function Logo({ size = "md", showText = false }) {
   const sizes = {
     sm: { image: 28 },
     md: { image: 40 },
-    lg: { image: 80 }
+    lg: { image: 80 },
+    xl: { image: 140 }
   };
 
   const s = sizes[size];
@@ -11,7 +12,7 @@ export default function Logo({ size = "md", showText = false }) {
     <div className="flex items-center gap-2">
       {/* Logo Image */}
       <img
-        src="/GG_Machines_RGB_TRANSPARENT.png"
+        src="/minpcwhite_RGB.png"
         alt="GG Machines Logo"
         style={{ height: `${s.image}px`, width: 'auto' }}
         className="object-contain"

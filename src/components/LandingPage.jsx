@@ -169,7 +169,7 @@ const techProducts = [
               {/* Image container */}
               <div className="relative w-full h-96 bg-gray-900 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
                 <img 
-                  src="/GMKTEC%20EVO-T1.avif" 
+                  src="/GMKTEC EVO-T1.avif" 
                   alt="GMKtec EVO-T1 Mini PC"
                   className="w-full h-full object-cover"
                 />

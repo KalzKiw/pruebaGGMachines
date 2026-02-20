@@ -6,12 +6,12 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Map products to their images
+  // Map products to their images (served from public/)
   const productImages = {
-    'GMKtec EVO-T1': '/GMKTEC%20EVO-T1.avif',
-    'GMKtec EVO-X1': '/GMKtec%20EVO-X1-.avif',
-    'MinisForum UM870 Plus': '/MinisForum%20UM870%20Plus.avif',
-    'GMKtec K6': '/GMKtec%20K6.avif'
+    'GMKtec EVO-T1': '/GMKTEC EVO-T1.avif',
+    'GMKtec EVO-X1': '/GMKtec EVO-X1-.avif',
+    'MinisForum UM870 Plus': '/MinisForum UM870 Plus.avif',
+    'GMKtec K6': '/GMKtec K6.avif'
   };
 
   useEffect(() => {

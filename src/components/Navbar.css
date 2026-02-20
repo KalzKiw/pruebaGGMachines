@@ -16,7 +16,18 @@
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: 900;
-  color: #7fff00;
+  color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff4ecd 0%, #6b8cff 100%);
+  box-shadow: 0 6px 18px rgba(255, 78, 205, 0.35);
 }
 
 .navbar-links {
@@ -33,7 +44,7 @@
 }
 
 .navbar-links li a:hover {
-  color: #7fff00;
+  color: #ff4ecd;
 }
 
 @media (max-width: 768px) {

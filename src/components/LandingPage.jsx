@@ -115,27 +115,26 @@ const techProducts = [
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden" data-aos="fade-up">
-        {/* Topographic background */}
-        <div className="absolute inset-0 opacity-20">
-          <svg viewBox="0 0 800 600" className="w-full h-full">
-            <path d="M0,100 Q200,80 400,100 T800,100" stroke="#333" strokeWidth="1" fill="none" opacity="0.3"/>
-            <path d="M0,200 Q200,180 400,200 T800,200" stroke="#333" strokeWidth="1" fill="none" opacity="0.3"/>
-            <path d="M0,300 Q200,280 400,300 T800,300" stroke="#333" strokeWidth="1" fill="none" opacity="0.3"/>
-            <path d="M0,400 Q200,380 400,400 T800,400" stroke="#333" strokeWidth="1" fill="none" opacity="0.3"/>
-          </svg>
+        <div className="hero-lines">
+          <span className="hero-line" style={{ top: '12%' }}></span>
+          <span className="hero-line" style={{ top: '24%' }}></span>
+          <span className="hero-line" style={{ top: '36%' }}></span>
+          <span className="hero-line" style={{ top: '52%' }}></span>
+          <span className="hero-line" style={{ top: '68%' }}></span>
+          <span className="hero-line" style={{ top: '84%' }}></span>
         </div>
         
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           <div className="flex-1 max-w-2xl" data-aos="fade-right">
             <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6">
-              <span className="text-green-400">TITANIC</span><br/>
+              <span className="text-fuchsia-400">TITANIC</span><br/>
               <span className="text-white">PERFORMANCE</span><br/>
-              <span className="text-green-400">MICRO</span> <span className="text-white">FOOTPRINT.</span>
+              <span className="text-fuchsia-400">MICRO</span> <span className="text-white">FOOTPRINT.</span>
             </h1>
             <p className="text-gray-300 mb-8 text-lg max-w-lg">
               Crush heavy workloads, rendering, and AI tasks without the tower. Enterprise-grade power that fits in your hand.
             </p>
-            <button className="bg-green-500 hover:bg-green-400 text-black px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center space-x-2">
+            <button className="bg-fuchsia-500 hover:bg-fuchsia-400 text-black px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center space-x-2">
               <span>EXPLORE MINI PCS</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -293,18 +292,23 @@ const techProducts = [
                   <p className="text-gray-400 text-sm mb-4 leading-relaxed">{product.description}</p>
                   <p className="text-white font-semibold mb-4">{product.specs}</p>
                   {product.price && (
-                    <p className="text-green-400 text-xl font-bold mb-4">{product.price}</p>
+                    <p className="text-fuchsia-400 text-xl font-bold mb-4">{product.price}</p>
                   )}
                   <div className="space-y-2">
                     <button 
                       onClick={() => handleAddToCart(product.id)}
-                      className="w-full bg-green-500 hover:bg-green-400 text-black py-3 rounded-lg font-bold transition-colors"
+                      className="w-full bg-fuchsia-500 hover:bg-fuchsia-400 text-black py-3 rounded-lg font-bold transition-colors"
                     >
                       ADD TO CART
                     </button>
-                    <button className="w-full border border-gray-600 text-gray-300 py-3 rounded-lg font-medium hover:border-green-400 hover:text-green-400 transition-colors">
-                      VIEW DETAILS
-                    </button>
+                    <a
+                      href={`/product/${product.id}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full border border-gray-600 text-gray-300 py-3 rounded-lg font-medium hover:border-fuchsia-400 hover:text-fuchsia-400 transition-colors flex items-center justify-center"
+                    >
+                      VIEW PC
+                    </a>
                   </div>
                 </div>
               ))

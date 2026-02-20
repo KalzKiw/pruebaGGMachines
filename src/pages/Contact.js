@@ -8,7 +8,7 @@ const Contact = () => (
       <input type="text" placeholder="Nombre" style={{width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: 'none', background: '#222', color: '#fff'}} />
       <input type="email" placeholder="Email" style={{width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: 'none', background: '#222', color: '#fff'}} />
       <textarea placeholder="Mensaje" rows="4" style={{width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: 'none', background: '#222', color: '#fff'}} />
-      <button type="submit" style={{width: '100%', padding: '12px', borderRadius: '8px', border: 'none', background: '#7fff00', color: '#111', fontWeight: 700, fontSize: '1.1rem'}}>Enviar</button>
+      <button type="submit" style={{width: '100%', padding: '12px', borderRadius: '8px', border: 'none', background: '#ff4ecd', color: '#111', fontWeight: 700, fontSize: '1.1rem'}}>Enviar</button>
     </form>
   </section>
 );

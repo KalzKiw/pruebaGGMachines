@@ -38,12 +38,12 @@ h1, h2, h3, h4, h5, h6 {
 
 
 a {
-  color: #7fff00;
+  color: #ff4ecd;
   text-decoration: none;
   transition: color 0.2s;
 }
 a:hover {
-  color: #22ff88;
+  color: #6b8cff;
 }
 
 

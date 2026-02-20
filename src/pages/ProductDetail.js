@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { wixServices } from '../services/veloService';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const [warranty, setWarranty] = useState('1YR');
 
   useEffect(() => {
     wixServices.getProducts().then(products => {
@@ -17,32 +20,97 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleAddToCart = async () => {
-    await wixServices.addToCart(product.id);
-    alert('Producto agregado al carrito');
+    await wixServices.addToCart(product.id, quantity);
+    alert('Product added to cart');
   };
 
   const handleCheckout = async () => {
-    alert('Pago en configuracion. Pronto habilitaremos el checkout.');
+    alert('Checkout coming soon.');
   };
 
-  if (loading) return <div style={{color:'#fff',textAlign:'center'}}>Cargando...</div>;
-  if (!product) return <div style={{color:'#fff',textAlign:'center'}}>Producto no encontrado</div>;
+  if (loading) return <div style={{color:'#fff',textAlign:'center'}}>Loading...</div>;
+  if (!product) return <div style={{color:'#fff',textAlign:'center'}}>Product not found</div>;
+
+  const galleryImages = product.image ? [product.image, product.image, product.image] : [];
 
   return (
-    <section style={{maxWidth:600,margin:'40px auto',background:'#181818',borderRadius:16,padding:32,color:'#fff',boxShadow:'0 2px 16px #0006'}}>
-      <button onClick={() => navigate(-1)} style={{marginBottom:20,background:'none',border:'none',color:'#ff4ecd',fontWeight:700,cursor:'pointer'}}>&larr; Volver</button>
-      <h2 style={{fontSize:'2.2rem',marginBottom:16}}>{product.model || product.name}</h2>
-      {product.image ? (
-        <img src={product.image} alt={product.model || product.name} style={{width:'100%',maxWidth:320,borderRadius:12,marginBottom:24}} />
-      ) : (
-        <div style={{height:'220px',maxWidth:320,borderRadius:12,marginBottom:24,background:'linear-gradient(135deg, #1f2937 0%, #111827 100%)',display:'flex',alignItems:'center',justifyContent:'center',color:'#9ca3af',fontWeight:700}}>PC IMAGE</div>
-      )}
-      <p style={{color:'#ff4ecd',fontWeight:700}}>{product.specs || product.desc}</p>
-      <p style={{margin:'16px 0'}}>{product.description || product.details}</p>
-      <p style={{fontSize:'1.5rem',fontWeight:900}}>{product.price}</p>
-      <div style={{marginTop:24,display:'flex',gap:16}}>
-        <button onClick={handleAddToCart} style={{background:'#ff4ecd',color:'#181818',padding:'12px 32px',borderRadius:30,fontWeight:700,border:'none',cursor:'pointer'}}>Añadir al carrito</button>
-        <button onClick={handleCheckout} style={{background:'#fff',color:'#181818',padding:'12px 32px',borderRadius:30,fontWeight:700,border:'none',cursor:'pointer'}}>Comprar ahora</button>
+    <section className="product-detail">
+      <div className="product-detail__crumbs">Home / All Products / {product.model || product.name}</div>
+      <div className="product-detail__shell">
+        <div className="product-detail__gallery">
+          <div className="product-detail__thumbs">
+            {galleryImages.length > 0 ? (
+              galleryImages.map((image, index) => (
+                <div className="product-detail__thumb" key={index}>
+                  <img src={image} alt={`Thumbnail ${index + 1}`} />
+                </div>
+              ))
+            ) : (
+              [0, 1, 2].map((idx) => (
+                <div className="product-detail__thumb" key={idx}>THUMB</div>
+              ))
+            )}
+          </div>
+          <div className="product-detail__main">
+            {product.image ? (
+              <img src={product.image} alt={product.model || product.name} />
+            ) : (
+              <div className="product-detail__placeholder">PC IMAGE</div>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <button onClick={() => navigate(-1)} style={{background:'none',border:'none',color:'#ff4ecd',fontWeight:700,cursor:'pointer',marginBottom:16}}>&larr; Back</button>
+          <h1 className="product-detail__title">{product.model || product.name}</h1>
+          <div className="product-detail__price">{product.price || '$0'}</div>
+          <div className="product-detail__specs">{product.specs || product.desc}</div>
+          <div className="product-detail__desc">{product.description || product.details}</div>
+
+          <div style={{fontWeight:700, marginBottom:10}}>Warranty Extension</div>
+          <div className="product-detail__options">
+            {['1YR', '2YR', 'No Extension'].map(option => (
+              <button
+                key={option}
+                className={`product-detail__option ${warranty === option ? 'product-detail__option--active' : ''}`}
+                onClick={() => setWarranty(option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+
+          <div className="product-detail__qty">
+            <span style={{fontWeight:700}}>Quantity</span>
+            <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          </div>
+
+          <div className="product-detail__cta">
+            <button className="primary" onClick={handleAddToCart}>Add to cart</button>
+            <button className="secondary" onClick={handleCheckout}>Buy now</button>
+          </div>
+
+          <div className="product-detail__accordion">
+            <details open>
+              <summary>Product Description</summary>
+              <p>{product.description || product.details}</p>
+            </details>
+            <details>
+              <summary>Returns & Refund Policy</summary>
+              <p>Easy returns and exchanges. We are here to ensure you buy with confidence.</p>
+            </details>
+            <details>
+              <summary>Shipping Info</summary>
+              <p>Fast, insured shipping with tracking. Delivery times vary by region.</p>
+            </details>
+            <details>
+              <summary>Specifications</summary>
+              <p>{product.specs || 'Full specs available on request.'}</p>
+            </details>
+          </div>
+        </div>
       </div>
     </section>
   );

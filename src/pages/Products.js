@@ -18,7 +18,7 @@ const Products = () => {
       <h2 style={{textAlign: 'center', fontSize: '2.5rem', color: '#fff', marginBottom: '40px'}}>PRODUCT LINEUP</h2>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px'}}>
         {loading ? (
-          <div style={{color:'#fff'}}>Cargando productos...</div>
+          <div style={{color:'#fff'}}>Loading products...</div>
         ) : (
           products.map((prod, idx) => (
             <div key={prod.id || idx} style={{background: '#181818', borderRadius: '16px', padding: '24px', minWidth: '260px', maxWidth: '300px', flex: '1 1 260px', textAlign: 'center', boxShadow: '0 2px 16px #0006'}}>

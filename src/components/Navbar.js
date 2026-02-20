@@ -1,19 +1,25 @@
 import React from 'react';
 import './Navbar.css';
+import Logo from './Logo';
 
 const Navbar = () => (
-  <nav className="navbar animate__animated animate__fadeInDown">
-    <div className="navbar-logo">
-      <span className="logo-mark" aria-hidden="true"></span>
-      <span>GG MACHINES</span>
+  <nav className="navbar sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Logo */}
+      <div className="navbar-logo flex items-center gap-2">
+        <Logo size="md" />
+        <span className="text-white font-black text-lg">GG MACHINES</span>
+      </div>
+
+      {/* Nav Links */}
+      <ul className="navbar-links hidden md:flex items-center gap-8">
+        <li><a href="#home" className="text-gray-300 hover:text-fuchsia-400 transition-colors font-medium">Home</a></li>
+        <li><a href="#features" className="text-gray-300 hover:text-fuchsia-400 transition-colors font-medium">Features</a></li>
+        <li><a href="/products" className="text-gray-300 hover:text-fuchsia-400 transition-colors font-medium">Products</a></li>
+        <li><a href="#services" className="text-gray-300 hover:text-fuchsia-400 transition-colors font-medium">Services</a></li>
+        <li><a href="#contact" className="text-gray-300 hover:text-fuchsia-400 transition-colors font-medium">Contact</a></li>
+      </ul>
     </div>
-    <ul className="navbar-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#features">Características</a></li>
-      <li><a href="#products">Productos</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
   </nav>
 );
 

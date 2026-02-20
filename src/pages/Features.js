@@ -16,7 +16,7 @@ const Features = () => (
       <div style={{flex: '1 1 300px', background: '#181818', borderRadius: '16px', padding: '32px', minWidth: '260px'}}>
         <h2 style={{color: '#fff'}}>OUTPUT INTERFACE</h2>
         <h3 style={{color: '#ff4ecd'}}>Quad-Display Support</h3>
-        <p style={{color: '#ccc'}}>HDMI2.1+ USB4</p>
+        <p style={{color: '#ccc'}}>HDMI 2.1 + USB4</p>
       </div>
     </div>
   </section>

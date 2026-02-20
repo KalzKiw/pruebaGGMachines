@@ -1,34 +1,23 @@
-.footer {
-  background: transparent;
-  color: #fff;
-  text-align: center;
-  padding: 30px 10px 10px 10px;
-  font-size: 1rem;
-  margin-top: 40px;
-}
 .footer-brand {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  margin-bottom: 8px;
 }
-.logo-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #ff4ecd 0%, #6b8cff 100%);
-  box-shadow: 0 6px 18px rgba(255, 78, 205, 0.35);
-}
+
 .footer-social {
-  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
+
 .footer-social a {
-  color: #ff4ecd;
-  margin: 0 10px;
-  font-size: 1.3rem;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .footer-social a:hover {
-  color: #6b8cff;
+  transform: scale(1.1);
 }
+

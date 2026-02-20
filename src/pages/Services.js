@@ -4,22 +4,22 @@ import 'animate-ui/dist/animate.min.css';
 const services = [
   {
     title: 'VAPOR CHAMBER COOLING TECH',
-    desc: 'Vapor Chamber Cooling asegura una micro-arquitectura silenciosa y densa para cargas profesionales.',
+    desc: 'Vapor chamber cooling enables quiet, dense micro-architecture for professional workloads.',
     img: '/assets/service1.png'
   },
   {
     title: 'HIGH-DENSITY MODULES',
-    desc: 'Nodos premium con garantía local. Micro-arquitectura silenciosa y sin desorden.',
+    desc: 'Premium nodes with local warranty. Quiet micro-architecture with zero clutter.',
     img: '/assets/service2.png'
   },
   {
     title: 'ZERO CLUTTER DEPLOYMENT',
-    desc: 'Unidades montables, bajo consumo y sin desorden en el escritorio.',
+    desc: 'Mountable units, low power draw, and a clean desk footprint.',
     img: '/assets/service3.png'
   },
   {
     title: 'IRISH EXPERT ASSISTANCE',
-    desc: 'Garantía y soporte local por especialistas. Hardware eficiente para oficinas minimalistas.',
+    desc: 'Local warranty and specialist support. Efficient hardware for minimal workspaces.',
     img: '/assets/service4.png'
   }
 ];

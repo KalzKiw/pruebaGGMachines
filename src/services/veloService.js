@@ -139,7 +139,7 @@ class VeloService {
     } catch (error) {
       console.error('Error creating checkout:', error);
       // Fallback para desarrollo
-      alert('Configura los endpoints de Velo para habilitar pagos');
+      alert('Configure Velo endpoints to enable payments');
       return null;
     }
   }
@@ -176,12 +176,12 @@ class VeloService {
       }
       
       const data = await response.json();
-      return { success: true, message: data.message || 'Formulario enviado exitosamente!' };
+      return { success: true, message: data.message || 'Form submitted successfully!' };
     } catch (error) {
       console.error('Error submitting contact form:', error);
       // Fallback para desarrollo
       console.log('Contact form submitted (mock):', formData);
-      return { success: true, message: 'Formulario enviado exitosamente! (modo mock)' };
+      return { success: true, message: 'Form submitted successfully! (mock mode)' };
     }
   }
 }

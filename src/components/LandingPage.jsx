@@ -29,7 +29,7 @@ export default function LandingPage() {
       setProducts(wixProducts);
     } catch (error) {
       console.error('Error loading products:', error);
-      // Fallback a productos de ejemplo si falla Wix
+      // Fallback to sample products if Wix fails
       setProducts([
         {
           id: 1,
@@ -82,10 +82,10 @@ export default function LandingPage() {
     try {
       await wixServices.addToCart(productId);
       loadCartCount(); // Actualizar contador
-      alert('Producto agregado al carrito!');
+      alert('Product added to cart!');
     } catch (error) {
       console.error('Error adding to cart:', error);
-      alert('Error al agregar al carrito');
+      alert('Error adding to cart');
     }
   };
 
@@ -97,7 +97,7 @@ export default function LandingPage() {
       }
     } catch (error) {
       console.error('Error during checkout:', error);
-      alert('Error al proceder al pago');
+      alert('Error proceeding to checkout');
     }
   };
 
@@ -114,43 +114,67 @@ const techProducts = [
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden" data-aos="fade-up">
-        <div className="hero-lines">
-          <span className="hero-line" style={{ top: '12%' }}></span>
-          <span className="hero-line" style={{ top: '24%' }}></span>
-          <span className="hero-line" style={{ top: '36%' }}></span>
-          <span className="hero-line" style={{ top: '52%' }}></span>
-          <span className="hero-line" style={{ top: '68%' }}></span>
-          <span className="hero-line" style={{ top: '84%' }}></span>
+      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-20">
+        {/* Background with animated gradient overlays */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-gray-950 flex items-center justify-center relative">
+            {/* Animated gradient blobs */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-fuchsia-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
         </div>
         
-        <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between w-full relative z-10">
           <div className="flex-1 max-w-2xl" data-aos="fade-right">
-            <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6">
-              <span className="text-fuchsia-400">TITANIC</span><br/>
-              <span className="text-white">PERFORMANCE</span><br/>
-              <span className="text-fuchsia-400">MICRO</span> <span className="text-white">FOOTPRINT.</span>
+            <div className="inline-block bg-gradient-to-r from-fuchsia-500/20 to-blue-500/20 border border-fuchsia-500/50 rounded-full px-4 py-2 mb-6" data-aos="fade-up">
+              <span className="text-fuchsia-400 text-sm font-semibold tracking-wider">🚀 NEXT-GEN MINI PC TECHNOLOGY</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 bg-gradient-to-r from-white via-fuchsia-400 to-white bg-clip-text text-transparent">
+              DESKTOP POWER.<br/>
+              POCKET SIZE.
             </h1>
-            <p className="text-gray-300 mb-8 text-lg max-w-lg">
-              Crush heavy workloads, rendering, and AI tasks without the tower. Enterprise-grade power that fits in your hand.
+            <p className="text-gray-300 mb-8 text-lg max-w-lg leading-relaxed">
+              Experience the perfect balance between raw computing power and space efficiency. Our AI-ready mini PCs crush professional workloads while consuming a fraction of the energy. No compromises.
             </p>
-            <button className="bg-fuchsia-500 hover:bg-fuchsia-400 text-black px-8 py-4 rounded-full font-bold text-lg transition-colors flex items-center space-x-2">
-              <span>EXPLORE MINI PCS</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </button>
+            <div className="flex gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="100">
+              <button className="bg-gradient-to-r from-fuchsia-500 to-blue-500 hover:from-fuchsia-400 hover:to-blue-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 duration-300 flex items-center space-x-2 shadow-lg shadow-fuchsia-500/50">
+                <span>SHOP NOW</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </button>
+              <button className="border-2 border-fuchsia-400 text-fuchsia-400 hover:bg-fuchsia-400 hover:text-black px-8 py-3 rounded-full font-bold text-lg transition-all duration-300">
+                LEARN MORE
+              </button>
+            </div>
+            <div className="mt-12 pt-8 border-t border-gray-800 grid grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+              <div>
+                <div className="text-3xl font-black text-fuchsia-400">2.5L</div>
+                <p className="text-gray-400 text-sm mt-1">Ultra Compact</p>
+              </div>
+              <div>
+                <div className="text-3xl font-black text-blue-400">64GB</div>
+                <p className="text-gray-400 text-sm mt-1">Max RAM</p>
+              </div>
+              <div>
+                <div className="text-3xl font-black text-fuchsia-400">50 TOPS</div>
+                <p className="text-gray-400 text-sm mt-1">AI Acceleration</p>
+              </div>
+            </div>
           </div>
           
-          <div className="flex-1 flex justify-center items-center" data-aos="fade-left">
+          <div className="flex-1 flex justify-center items-center" data-aos="fade-left" data-aos-delay="300">
             <div className="relative">
-              <img src="" alt="Mini PC Setup" className="w-96 h-96 object-contain" />
+              {/* Animated gradient border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-blue-500 rounded-3xl blur-2xl opacity-20"></div>
+              
               {/* Placeholder for mini PC images */}
-              <div className="w-96 h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700">
-                <div className="text-center">
-                  <div className="w-32 h-20 bg-gray-700 rounded-lg mb-4 mx-auto"></div>
-                  <div className="w-20 h-16 bg-gray-600 rounded-lg mx-auto"></div>
-                  <p className="text-gray-400 mt-4">Mini PC Setup</p>
+              <div className="relative w-full max-w-sm h-96 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl flex items-center justify-center border border-gray-700 backdrop-blur-sm overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-blue-500/10"></div>
+                <div className="text-center relative z-10">
+                  <div className="text-6xl mb-4">💻</div>
+                  <p className="text-gray-300 font-semibold">Premium Mini PC</p>
+                  <p className="text-gray-500 text-sm mt-2">High-Performance Ready</p>
                 </div>
               </div>
             </div>
@@ -159,60 +183,107 @@ const techProducts = [
       </section>
 
       {/* Specs Section */}
-      <section className="py-20 px-6" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          {/* AI Ready */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in">
-            <div className="text-gray-400 text-sm mb-2 tracking-wider">AI<br/>READY</div>
-            <h3 className="text-5xl font-black mb-4">NPU 50<br/>TOPS</h3>
-            <p className="text-gray-400">(Ryzen AI 9 HX<br/>370)</p>
-          </div>
-          
-          {/* Core Performance */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in" data-aos-delay="100">
-            <div className="text-gray-400 text-sm mb-2 tracking-wider">CORE<br/>PERFORMANCE</div>
-            <h3 className="text-4xl font-bold mb-4">64GB DDR5 RAM & 1TB<br/>SSD GEN4</h3>
-          </div>
-          
-          {/* Output Interface */}
-          <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition-transform duration-500" data-aos="zoom-in" data-aos-delay="200">
-            <div className="text-gray-400 text-sm mb-2 tracking-wider">OUTPUT INTERFACE</div>
-            <div className="space-y-2">
-              <p className="font-semibold">Quad-Display<br/>Support</p>
-              <p className="text-gray-400 text-sm">HDMI 2.1 +<br/>USB4</p>
-            </div>
-          </div>
+      <section className="py-32 px-6 relative overflow-hidden" data-aos="fade-up">
+        {/* Background decoration */}
+        <div className="absolute inset-0 z-0 opacity-30">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         </div>
         
-        {/* Brand Section */}
-        <div className="text-center mt-16">
-          <div className="text-gray-500 text-sm tracking-[0.3em] mb-4">MINI PC'S IRELAND</div>
-          <div className="text-gray-500 text-xs tracking-[0.2em]">POWERED BY GG<br/>MACHINES</div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-5xl md:text-6xl font-black mb-4">PERFORMANCE THAT MATTERS</h2>
+            <p className="text-gray-400 text-lg">Enterprise-grade specs in a form factor you can hold</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* AI Ready */}
+            <div className="bg-gradient-to-br from-fuchsia-500/20 to-transparent border border-fuchsia-500/50 rounded-2xl p-8 shadow-lg hover:shadow-fuchsia-500/50 hover:scale-105 transition-all duration-500" data-aos="zoom-in">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-gray-400 text-sm mb-2 tracking-wider font-semibold">AI ACCELERATION</div>
+                  <h3 className="text-5xl font-black mb-2 text-fuchsia-400">50<span className="text-2xl">TOPS</span></h3>
+                </div>
+                <div className="text-4xl">🤖</div>
+              </div>
+              <p className="text-gray-300 text-sm">Ryzen AI 9 HX 370 with integrated NPU for next-gen machine learning tasks and creative workflows</p>
+            </div>
+            
+            {/* Core Performance */}
+            <div className="bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/50 rounded-2xl p-8 shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-500" data-aos="zoom-in" data-aos-delay="100">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-gray-400 text-sm mb-2 tracking-wider font-semibold">CORE POWER</div>
+                  <h3 className="text-4xl font-black text-blue-400">64GB<br/>DDR5 RAM</h3>
+                </div>
+                <div className="text-4xl">⚡</div>
+              </div>
+              <p className="text-gray-300 text-sm">1TB SSD NVMe Gen4 with blazing-fast I/O for 3D rendering, video editing, and complex simulations</p>
+            </div>
+            
+            {/* Output Interface */}
+            <div className="bg-gradient-to-br from-cyan-500/20 to-transparent border border-cyan-500/50 rounded-2xl p-8 shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-500" data-aos="zoom-in" data-aos-delay="200">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-gray-400 text-sm mb-2 tracking-wider font-semibold">CONNECTIVITY</div>
+                  <h3 className="font-semibold text-cyan-400">Quad-Display<br/>Support</h3>
+                </div>
+                <div className="text-4xl">🖥️</div>
+              </div>
+              <p className="text-gray-300 text-sm">HDMI 2.1 + USB4 connectivity. Multi-monitor productivity rig for traders, designers, and developers</p>
+            </div>
+          </div>
+          
+          {/* Brand Section - Enhanced */}
+          <div className="text-center mt-20 p-12 bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-2xl" data-aos="fade-up">
+            <div className="text-fuchsia-400 text-sm tracking-[0.3em] mb-4 font-semibold">TRUSTED PARTNER</div>
+            <h3 className="text-3xl font-black mb-2">GG MACHINES</h3>
+            <p className="text-gray-400">Mini PC Specialists. Ireland's Premier High-Performance Computing Shop.</p>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up">
-            <h3 className="text-2xl font-bold mb-4">Engineering<br/>Expertise</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Specialized in Custom Loops and AI Workstations. Our master technicians engineer liquid-cooled auto systems and high-density deep learning infrastructure with surgical precision for peak thermal performance.
-            </p>
+      <section className="py-32 px-6 relative overflow-hidden" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-5xl md:text-6xl font-black mb-4">WHY CHOOSE GG MACHINES</h2>
+            <p className="text-gray-400 text-lg">Unmatched expertise, support, and value</p>
           </div>
           
-          <div className="bg-gray-900/30 border border-blue-800/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="text-2xl font-bold mb-4">B2B &<br/>Education</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Trusted partners for Schools and Esports Arenas. Large-scale deployment for educational institutions and professional competitive environments, backed by volume logistics and priority SLA.
-            </p>
-          </div>
-          
-          <div className="bg-gray-900/30 border border-gray-600/50 rounded-2xl p-8 shadow-md hover:scale-105 transition-transform duration-500" data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-2xl font-bold mb-4 text-gray-400">Human<br/>Support</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Honest advice, no upselling, and personalized service. Speak directly to specialists who understand performance metrics. We prioritize your specific workflow over profit margins, every time.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group bg-gradient-to-br from-purple-900/50 to-gray-900/50 border border-purple-500/50 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/50 hover:scale-105 transition-all duration-500" data-aos="fade-up">
+              <div className="text-5xl mb-6">🔧</div>
+              <h3 className="text-2xl font-bold mb-4">Engineering<br/>Excellence</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Specialists in custom thermal solutions and AI workstations. Our master technicians engineer precision cooling systems with surgical accuracy for peak performance.
+              </p>
+              <div className="mt-6 pt-6 border-t border-purple-500/30">
+                <p className="text-purple-300 text-xs font-semibold">✓ Custom builds ✓ Liquid cooling ✓ 24/7 Support</p>
+              </div>
+            </div>
+            
+            <div className="group bg-gradient-to-br from-blue-900/50 to-gray-900/50 border border-blue-500/50 rounded-2xl p-8 shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+              <div className="text-5xl mb-6">🏢</div>
+              <h3 className="text-2xl font-bold mb-4">B2B & Education</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Trusted by schools, universities, and enterprises. Large-scale deployments with dedicated logistics, volume pricing, and priority technical support.
+              </p>
+              <div className="mt-6 pt-6 border-t border-blue-500/30">
+                <p className="text-blue-300 text-xs font-semibold">✓ Volume discounts ✓ Fleet management ✓ SLA backed</p>
+              </div>
+            </div>
+            
+            <div className="group bg-gradient-to-br from-cyan-900/50 to-gray-900/50 border border-cyan-500/50 rounded-2xl p-8 shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+              <div className="text-5xl mb-6">👥</div>
+              <h3 className="text-2xl font-bold mb-4">Honest Support</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                No upselling. No BS. Speak directly with specialists who understand your workflow. We prioritize your success over margins, every single time.
+              </p>
+              <div className="mt-6 pt-6 border-t border-cyan-500/30">
+                <p className="text-cyan-300 text-xs font-semibold">✓ Expert advice ✓ No fluff ✓ 1-on-1 consultation</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -240,7 +311,7 @@ const techProducts = [
               <div className="text-gray-400 text-sm mb-2 tracking-wider">02</div>
               <h3 className="text-4xl font-bold mb-4">REAL ENERGY EFFICIENCY</h3>
               <p className="text-gray-300">
-                Forget the myth that 'bigger is better.' Get workstation power with energy consumption optimized for businesses and creators seeking profitability.
+                Forget the myth that “bigger is better.” Get workstation power with energy consumption optimized for businesses and creators seeking profitability.
               </p>
             </div>
             <div className="w-80 h-64 bg-gray-900/50 border border-gray-800 rounded-2xl" data-aos="fade-left"></div>
@@ -348,7 +419,7 @@ const techProducts = [
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold mb-4">VAPOR CHAMBER<br/>COOLING TECH</h3>
                 <p className="text-gray-300 text-sm">
-                  Vapor Chamber Cooling state-of-the-art CPU architecture revolutionizes thermal dynamics for maximum performance and silence.
+                  Vapor chamber cooling and state-of-the-art CPU architecture revolutionize thermal dynamics for maximum performance and silence.
                 </p>
               </div>
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full"></div>
@@ -367,14 +438,14 @@ const techProducts = [
             <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8 shadow-lg" data-aos="fade-right">
               <h3 className="text-3xl font-bold mb-4">ZERO CLUTTER<br/>DEPLOYMENT</h3>
               <p className="text-gray-300 text-sm">
-                Hyper-compact 5G Oll Connectivity. Flawless container-based deployments for modern enterprise infrastructure and remote workstations.
+                Hyper-compact 5G connectivity. Flawless container-based deployments for modern enterprise infrastructure and remote workstations.
               </p>
             </div>
             
             <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl p-8 shadow-lg" data-aos="fade-left">
               <h3 className="text-3xl font-bold mb-4">IRISH EXPERT<br/>ASSISTANCE</h3>
               <p className="text-gray-300 text-sm">
-                Expert local consultation. Our Engineers assess your workflow before installation. Backed by pride in micro hardware engineering.
+                Expert local consultation. Our engineers assess your workflow before installation. Backed by pride in micro hardware engineering.
               </p>
             </div>
           </div>

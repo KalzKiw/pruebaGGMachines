@@ -110,9 +110,7 @@ const techProducts = [
     <div className="bg-gradient-to-br from-black via-gray-900 to-gray-950 min-h-screen font-sans text-white">
       {/* Navigation */}
       <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-between px-6 overflow-hidden py-4">
+      <section className="relative min-h-[55vh] flex items-center justify-between px-6 overflow-hidden pt-0 pb-0">
         {/* Background with subtle gradient overlays */}
         <div className="absolute inset-0 z-0">
           <div className="w-full h-full bg-gradient-to-br from-black via-gray-950 to-black flex items-center justify-center relative">
@@ -121,7 +119,6 @@ const techProducts = [
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
-        
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full relative z-10 gap-12">
           <div className="flex-1 max-w-2xl" data-aos="fade-right">
             <div className="inline-block bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6" data-aos="fade-up">
@@ -133,8 +130,11 @@ const techProducts = [
             </h1>
             <p>Enterprise-grade performance in a form factor designed for modern professionals. AI acceleration, premium cooling, and uncompromising engineering.</p>
             <div className="hero-buttons">
-              <button className="explore-btn">EXPLORE</button>
-              <button className="learn-btn">LEARN MORE</button>
+              <button className="explore-btn" onClick={() => {
+                const features = document.getElementById('features');
+                if (features) features.scrollIntoView({ behavior: 'smooth' });
+              }}>EXPLORE</button>
+              <button className="learn-btn" onClick={() => alert('Contact us for more information or scroll down to see more!')}>LEARN MORE</button>
             </div>
             <div className="hero-specs">
               <div>
@@ -150,36 +150,32 @@ const techProducts = [
                 <small>AI Acceleration</small>
               </div>
             </div>
-            <div className="hero-image">
-              <img src={require('../assets/GMKTEC EVO-T1.avif')} alt="GMKTEC EVO-T1" />
-            </div>
-
-      {/* Specs Section */}
-      <section className="py-32 px-6 relative overflow-hidden" data-aos="fade-up">
-        {/* Background decoration */}
-        <div className="absolute inset-0 z-0 opacity-5">
+          </div>
+          <div className="hero-image">
+            <img src={require('../assets/GMKTEC EVO-T1.avif')} alt="GMKTEC EVO-T1" style={{ width: '320px', height: 'auto', borderRadius: '16px', background: 'transparent' }} />
+          </div>
+        </div>
+      </section>
+        {/* Engineering Section */}
+        <section>
           <div className="absolute top-0 left-0 w-96 h-96 bg-fuchsia-600 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-5xl md:text-6xl font-black mb-4 text-white">ENGINEERING EXCELLENCE</h2>
-            <p className="text-gray-400 text-lg">Professional-grade specifications in a compact form factor</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* AI Acceleration */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-8 shadow-lg hover:shadow-fuchsia-500/10 hover:border-fuchsia-500/30 transition-all duration-500" data-aos="zoom-in">
-              <div className="mb-4">
-                <div className="text-gray-400 text-sm mb-2 tracking-widest font-semibold">AI ACCELERATION</div>
-                <h3 className="text-5xl font-black text-white mb-2">50<span className="text-2xl text-gray-400">TOPS</span></h3>
-              </div>
-              <p className="text-gray-400 text-sm">Ryzen AI 9 HX 370 with integrated NPU for machine learning and creative workflows</p>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16" data-aos="fade-up">
+              <h2 className="text-5xl md:text-6xl font-black mb-4 text-white">ENGINEERING EXCELLENCE</h2>
+              <p className="text-gray-400 text-lg">Professional-grade specifications in a compact form factor</p>
             </div>
-            
-            {/* Core Performance */}
-            <div className="bg-white/5 border border-white/10 rounded-lg p-8 shadow-lg hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="100">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* AI Acceleration */}
+              <div className="bg-white/5 border border-white/10 rounded-lg p-8 shadow-lg hover:shadow-fuchsia-500/10 hover:border-fuchsia-500/30 transition-all duration-500" data-aos="zoom-in">
+                <div className="mb-4">
+                  <div className="text-gray-400 text-sm mb-2 tracking-widest font-semibold">AI ACCELERATION</div>
+                  <h3 className="text-5xl font-black text-white mb-2">50<span className="text-2xl text-gray-400">TOPS</span></h3>
+                </div>
+                <p className="text-gray-400 text-sm">Ryzen AI 9 HX 370 with integrated NPU for machine learning and creative workflows</p>
+              </div>
+              {/* Core Performance */}
+              <div className="bg-white/5 border border-white/10 rounded-lg p-8 shadow-lg hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="100">
               <div className="mb-4">
                 <div className="text-gray-400 text-sm mb-2 tracking-widest font-semibold">MEMORY</div>
                 <h3 className="text-4xl font-black text-white">64GB<br/>DDR5</h3>

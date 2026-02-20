@@ -5,7 +5,6 @@ import logo from '../assets/minpcwhite_RGB.png';
 
 const Footer = () => (
   <footer className="bg-black border-t border-gray-800 py-12 px-6">
-    <img src={logo} alt="Logo" className="footer-logo" />
     <div className="max-w-7xl mx-auto">
       <div className="grid md:grid-cols-3 gap-12 mb-12 items-center">
         {/* Logo Left */}

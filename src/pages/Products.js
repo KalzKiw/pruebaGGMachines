@@ -38,6 +38,9 @@ const Products = () => {
     }));
   };
 
+  // Back button handler for product details (if any)
+  const handleBack = () => window.history.back();
+
   return (
     <section id="products" className="py-32 px-6" style={{background: 'transparent'}}>
       <div className="max-w-7xl mx-auto">
@@ -57,9 +60,9 @@ const Products = () => {
                     />
                   ) : (
                     <img
-                      src={productImages[prod.name] || placeholderImage}
-                      alt={prod.name}
-                      className="product-image"
+                      src={require('../assets/minpcwhite_RGB.png')}
+                      alt="Logo Placeholder"
+                      className="w-full h-48 object-contain rounded-lg mb-6"
                     />
                   )}
                   <h3 className="text-white font-bold mb-2 text-lg">{prod.model || prod.name}</h3>

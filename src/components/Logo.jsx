@@ -12,7 +12,13 @@ export default function Logo({ size = "md", showText = false }) {
     <div className="flex items-center gap-2">
       {/* Logo Image */}
       <img
-        src={require('../assets/minpcwhite_RGB.png')}
+        src={(() => {
+          try {
+            return require('../assets/minpcwhite_RGB.png');
+          } catch {
+            return require('../assets/GG_Machines_RGB_TRANSPARENT.png');
+          }
+        })()}
         alt="GG Machines Logo"
         style={{ height: `${s.image}px`, width: 'auto' }}
         className="object-contain"
